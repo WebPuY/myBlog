@@ -1,0 +1,38 @@
+extends bloglayout
+block bcontent
+	include narbar.jade
+	#dsdcontent.container
+		.col-md-12.dsd
+			h3= diary.diarytitle
+			.title_time
+				span #{moment(diary.meta.createAt).format('MM/DD/YYYY')}
+			br
+			.content_time
+				p !{diary.diarycontent}
+			.panel.panel-default#remark-panel
+				.panel-heading
+					h3 评论区
+				.panel-body
+					ul.commentslist(style="text-align:left")
+						each item in comments
+							li.media
+								a.comment(href="#comments",data-cid="#{item._id}",data-tid="#{item.from._id}") #{item.from.name}
+								p #{item.content}
+								if item.reply && item.reply.length > 0
+									each reply in item.reply
+										.media
+											.mleft5
+												a.comment.media-heading(href="#comments",data-cid="#{item._id}",data-tid="#{item.from._id}") 
+													| #{reply.from.name}
+													span.text-info &nbsp;回复&nbsp;:
+												p #{reply.content}
+					br
+					#comments
+						form#commentForm(method="POST", action="/user/comment")
+							input(type="hidden",name="comment[diary]",value="#{diary._id}")
+							input(type="hidden",name="comment[from]",value="#{user._id}")
+							.form-group
+								textarea.form-control(name="comment[content]",row="3",require)
+							button.btn.btn-primary(type="submit") 提交
+
+			script(src="/javascripts/commentdetail.js")

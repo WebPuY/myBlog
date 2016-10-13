@@ -1,0 +1,33 @@
+extends bloglayout
+block bcontent
+  include narbar
+  div.jumbotron
+    div#indexContainer.container
+        div.leftContent
+          - if (!user){
+            h1 欢迎来到我的个人网站
+            h4 ——起个什么名字好呢
+            p
+                include ./introduce.jade
+          - }else{
+                div.container
+                    include ./say.jade
+                include ./posts.jade
+          - }
+        div#rightContent
+            p.rCtitle 自我介绍  
+            div.rCcontent
+                img(src="/images/me.jpg",alt="")
+                ul.myList
+                    li
+                        span 姓名：闫璞
+                    li
+                        span 京东金融前端er一枚
+                    li
+                        span 就读于天津科技大学，大四未毕业
+                    li
+                        span QQ：871513369
+                    li
+                        a(href="mailto:871513369@qq.com") 点击前往邮箱
+                    br
+

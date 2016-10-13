@@ -1,0 +1,22 @@
+extends bloglayout
+block bcontent
+	include narbar.jade
+	#rContent.container(style="margin-bottom:50px")
+		.row
+			each cat in categories
+				panel.panel-primary
+					.panel-heading
+						h6 #{cat.name}
+					.panel-body
+						if cat.movies && cat.movies.length > 0	
+							each item in cat.movies
+								.col-md-10
+									.thumbnail
+										a(href="/movie/#{item._id}")
+										.caption
+											h3 电影名： #{item.title} 
+											p 简介： #{item.summary}
+											p 导演： #{item.doctor}
+											p 年份： #{item.year}
+											p 网盘链接：
+												a(href="#{item.downloadurl}") #{item.downloadurl}						

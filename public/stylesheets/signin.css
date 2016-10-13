@@ -1,0 +1,155 @@
+*{margin:0;padding:0;}
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+ul,li {list-style: none}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#indexContainer{
+  padding:0 0 0 15px;
+}
+#indexContainer .leftContent{
+  max-width: 75%;
+  float: left;
+}
+#indexContainer .leftContent h1{
+  font-size: 55px;
+}
+#indexContainer .leftContent h4{
+  padding-left: 50%;
+}
+#indexContainer .leftContent .row p{
+	margin:0;padding:0;
+}
+#indexContainer #rightContent{
+  width: 22%;
+  border:1px solid #ddd;
+  float: right;
+  text-align: center;
+  background: #fff;
+}
+#indexContainer .rCtitle{
+  padding-top: 12px;
+}
+
+#rightContent{
+  text-align: center;
+}
+#rightContent img{
+  width:90%;
+}
+#rightContent .myList{
+  margin-top:10px;
+  margin-left:12px;
+  text-align: left;
+}
+#rightContent .myList li{
+  margin-top:10px;
+  font-size: 14px
+}
+
+/*联系页样式*/
+#cContent{
+  color:#428bca;
+}
+#cContent .desc{
+  margin-top: 5%
+}
+#cContent .desc p{
+  font-size: 22px;
+  margin-top: 5%;
+  margin-left:30%;
+}
+#cContent .email{
+  margin-top: 5%;
+  margin-left:30%;
+}
+#cContent .email p{
+  font-size: 16px;
+}
+#cContent .email article p{
+  margin-top: 8px;
+  font-size: 14px;
+}
+#cContent .email textarea,input{
+  color:#000;
+}
+/*联系页样式*/
+
+/*日记页样式*/
+#dContainer .headline{
+  margin-top:3%;
+}
+#dContainer .headline .btn1{
+  float: left;
+}
+#dContainer .headline .btn2{
+  margin-left: 5%
+}
+#dContainer .headline .pagination{
+  float: right;
+  margin:0;
+}
+#dContainer .dContent .caption p{
+    font:14px Verdana,Arial;
+}
+/*日记页样式*/
+
+/*日记详情页样式*/
+#dsdcontent{
+  text-align: center;
+  background: #fff;
+  margin-top: 20px;
+  width:960px;
+} 
+#dsdcontent h3{
+  font-size: 30px
+}
+#dsdcontent .content_time{
+  font-size: 18px;
+  text-align: left;
+  text-indent: 2em;
+}
+#dsdcontent .content_time p{
+  line-height: 30px
+}
+.mleft5{
+  margin-left: 5%
+}
+/*日记详情页样式*/

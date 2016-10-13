@@ -1,0 +1,6 @@
+form(class='well form-inline center' method='post' action='/post' style='text-align:center;')
+  p(style='text-align:center;margin-right:10%') 留言	
+  input(type='text' class='input-lg' id='post' name='post' style="margin-right:3%",required)
+  button(type='submit' class='btn btn-primary') 
+    span=user.name
+    span.glyphicon.glyphicon-comment 

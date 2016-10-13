@@ -1,0 +1,10 @@
+extends bloglayout
+block bcontent
+  include narbar.jade
+  div.jumbotron
+    div.container
+      - if (user)
+        include ./say.jade
+        include ./posts.jade
+  div.container
+    include footer.jade

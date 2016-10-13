@@ -1,0 +1,17 @@
+extends bloglayout
+block bcontent
+	include narbar.jade
+	div#cContent.container
+		div.desc
+			h3 好了，看到这里的时候，你也应该大概翻了一遍所有内容。
+			h3 这个网站只是我的一个尝试，样式和技术都非常简单，也有很多方面做的不够好。我会在接下来的日子里继续完善它。如果你有任何方面的建议，包括界面设计、功能模块、或者其他任何方面，可以直接在留言板里进行留言。或者直接联系我，方式如下。不胜感激。
+			p 微信&&QQ： 871513369
+		div.email
+			form(method="POST")
+				p 或者，直接发一个邮件吧。
+				article
+					p Your e-mail
+					input(type="text",name="email")
+					p Message
+					textarea(name="body",rows="10",cols="50")
+				button.btn.btn-primary(type="submit") 发送

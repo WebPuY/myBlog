@@ -1,0 +1,52 @@
+extends bloglayout
+block bcontent
+	include narbar.jade
+	#eContainer.container(style="padding-left:100px")
+		div.row(style="margin-top:5%")
+			form.form-horizontal(method="POST",action="/admin/diary/edit/new",novalidate)
+				input(type="hidden",name="diary[_id]",value="#{diary._id}",required,runat="server")
+				div.form-group
+					label.col-sm-2.control-label(for="inputTitle") 文章标题
+					.col-sm-8
+						input#diaryTitle.form-control(type="text",name="diary[diarytitle]",value=diary.diarytitle,required)
+				div.form-group
+					label.col-sm-2.control-label(for="inputSummary") 文章简介
+					.col-sm-8
+						input#diarySummary.form-control(type="text",name="diary[diarysummary]",value=diary.diarysummary,required)
+				div.form-group(style="margin-top:3%")
+					label.col-sm-2.control-label(for="inputcontent") 文章内容
+					.col-sm-10
+						textarea#diarycontent.form-control(name="diary[diarycontent]",required,style="width:800px; height:400px")
+				.form-group
+					.col-sm-offset-2
+					button.btn.btn-primary(type="submit",style="margin-left: 10%",id="submitInput",onclick="editpost()") 录入
+		script(type="text/javascript").
+			tinymce.init({
+				mode:'textareas',
+				selector:'#diarycontent',          //<textarea>中为编辑区域
+				theme: "modern",                  //主题
+				language: "zh_CN",                //语言 ，可自行下载中文
+				height: 400,
+				width:800,
+				plugins: [                         
+					"advlist autolink lists charmap print preview hr anchor pagebreak spellchecker",
+					"searchreplace wordcount visualblocks visualchars fullscreen insertdatetime  nonbreaking",
+					"save table contextmenu directionality emoticons paste textcolor"
+				],
+				toolbar: "insertfile undo redo | styleselect fontselect fontsizeselect| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l", 
+				style_formats: [                        //初始时提供的默认格式
+					{title: 'Bold text', inline: 'b'},
+					{title: 'Red text', inline: 'span', styles: {color: '#ff0000'}},
+					{title: 'Red header', block: 'h1', styles: {color: '#ff0000'}},
+					{title: 'Example 1', inline: 'span', classes: 'example1'},
+					{title: 'Example 2', inline: 'span', classes: 'example2'},
+					{title: 'Table styles'},
+					{title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
+				]
+			});
+
+		script(type="text/javascript").
+			function editpost(){
+				var content = tinymce.get('diarycontent').getContet();
+				console.log(content);
+			}	

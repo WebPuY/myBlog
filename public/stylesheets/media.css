@@ -1,0 +1,28 @@
+@media screen and (max-width : 800px) {              
+/* 样式写在这*/
+	#remark-panel{width: 100%}
+	  
+}     
+
+@media screen and (max-width : 640px) {              
+/* 样式写在这*/
+	#remark-panel{width: 100%}  
+	
+}     
+
+@media screen and (max-device-width: 1024px) and (orientation: landscape) {              
+/* 样式写在这*/
+	#remark-panel{width: 100%} 
+	
+}     
+
+@media screen and (max-device-width: 768px) and (orientation: portrait) {         
+/* 样式写在这*/
+	#remark-panel{width: 100%} 
+  
+}     
+@media screen and (min-device-width: 320px) and (min-device-width: 480px) {              
+/* 样式写在这*/
+	#remark-panel{width: 100%} 
+	 
+} 

@@ -1,0 +1,38 @@
+extends bloglayout
+block bcontent
+	include narbar.jade
+	#dContainer.container
+		-if(user.role>=1)
+			.headline
+				a(href="/admin/diary/edit").btn.btn-primary.btn1 录入日志
+				a(href="/admin/diary/list").btn.btn-primary.btn2 管理日志
+				//-ul.pagination.pagination-center
+					li 
+						a(href="#") «
+					li 
+						a(href="#") 1
+					li 
+						a(href="#") 2
+					li 
+						a(href="#") 3
+					li 
+						a(href="#") »			
+		.dContent(style="margin-bottom:60px")
+			.row
+				//-for(var i = 0;i<diaries.length;i+=1)
+					.col-md-10(style="margin-top:20px")
+						.thumbnail(style="margin-bottom:0")
+							.caption
+								h3: a(target="_blank",href="../diary/#{diaries[i]._id}") #{diaries[i].diarytitle} 
+								p 简介： #{diaries[i].diarysummary}
+								p 时间：#{moment(diaries[i].meta.createAt).format('MM/DD/YYYY')}
+								p 内容：!{diaries[i].diarycontent}
+				each items in diaries
+					.col-md-10(style="margin-top:20px")
+						.thumbnail(style="margin-bottom:0")
+							.caption
+								h3: a(target="_blank",href="../diary/#{items._id}") #{items.diarytitle} 
+								p 简介： #{items.diarysummary}
+								p 时间：#{moment(items.meta.createAt).format('MM/DD/YYYY')}
+								p 内容：!{items.diarycontent}
+

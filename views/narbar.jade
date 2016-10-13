@@ -1,0 +1,41 @@
+//Fixed navbar
+div.navbar.navbar-inverse.navbar-fixed-top
+  div.container
+    div.navbar-header
+      button(type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a(class='navbar-brand' href='/diary') Ynimi
+        
+    div.navbar-collapse.collapse
+      ul#navul.nav.navbar-nav
+        - if (!user)
+          li
+            a(href='/') 首页
+          li
+            a(href='/login') 登录
+          li
+            a(href='/reg') 注册
+        - else
+          li
+            a(href='/diary') 日记
+          li
+            a(href='/reco') 推荐
+          li
+            a(href='/') 留言
+          li
+            a(href='/logout') 登出
+              
+      ul.nav.navbar-nav.navbar-right
+        li.active
+          a(href='http://weibo.com/3198207664/profile?topnav=1&wvr=6&is_all=1' target="_blank") 通往我的微博
+  script.
+    window.onload = function(){
+      var nava = $("#navul li a");
+      nava.click(function(){
+        var _this = $(this);
+        _this.parent().addClass('active').siblings().removeClass();
+      });
+    }
